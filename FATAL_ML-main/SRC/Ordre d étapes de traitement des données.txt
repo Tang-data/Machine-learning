@@ -1,0 +1,19 @@
+1- suppression des colonnes vides (suppression_colonne_vide())
+2- suppression de la colonne Unnamed créée par pandas (unnamed_drop())
+3- affichage des None (affichage_blanc())
+4- suppression des lignes vides (supression_blanc())
+*** 4bis- Remplacement des valeurs
+5- selection de la colonne cible (selection_target())
+6- encodage pour les classifications (encodage(colonne_target))
+7- affichage des colinarités (colinearite())
+
+
+8- selection mannuelle des colonnes pour la regression(selection_colonne())
+9- detection de la standardisationdes données (detection_standardisation())
+10- standardisation (standardize_data())
+
+
+
+X- affichage de la distribution des colonnes(affichage_distribution_colonnes())
+Y: affichage du nombre de lignes de chaque colonne (affichage_nombre_lignes_par_colonne())
+

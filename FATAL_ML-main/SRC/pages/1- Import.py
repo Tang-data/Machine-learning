@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import csv
+from modules import state_write
 
 #Configuration des dimensions & affichage de la page
 st.set_page_config(page_title="Import", 
@@ -12,19 +13,17 @@ choix = st.sidebar.selectbox(
 'Quel df voulez-vous traiter ?', liste_df
 )
 
-def state_write():
-    st.session_state['df'] = df
-    st.write(df)
-
 if choix == 'DF Diabète':
-    df = pd.read_csv("C:/Users/murai/OneDrive/Documents/GitHub/FATAL_ML/SRC/diabete.csv")
+    df = pd.read_csv("SRC/diabete.csv")
+    # df = pd.read_csv("C:/Users/murai/OneDrive/Documents/GitHub/FATAL_ML/SRC/diabete.csv")
     # if 'df' not in st.session_state:
-    state_write()
+    state_write(df)
 
 elif choix == 'DF Vin':
-    df = pd.read_csv("C:/Users/murai/OneDrive/Documents/GitHub/FATAL_ML/SRC/vin.csv")
+    df = pd.read_csv("SRC/vin.csv")
+    # df = pd.read_csv("C:/Users/murai/OneDrive/Documents/GitHub/FATAL_ML/SRC/vin.csv")
     # if 'df' not in st.session_state:
-    state_write()
+    state_write(df)
 
 else:
     file = st.file_uploader("Uploader un fichier", type="csv")
@@ -39,6 +38,6 @@ else:
 
         # Lire le fichier CSV dans un DataFrame pandas en utilisant le séparateur identifié
         df = pd.read_csv(file, sep=separator)
-        state_write()
+        state_write(df)
 
 
